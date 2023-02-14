@@ -47,7 +47,7 @@ focal_length_mm = 200.0;
 handle = heds_load_data(uint8(grayValue));
 
 % Wait for the data to be processed internally to speed up the heds_show_datahandle(handle) call later:
-heds_datahandle_waitfor(handle.id, heds_state.ReadyToRender);
+heds_datahandle_waitfor(hanadle.id, heds_state.ReadyToRender);
 
 % Make the data without overlay visible on SLM screen:
 heds_show_datahandle(handle.id);
