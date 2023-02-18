@@ -36,11 +36,11 @@ grayValueOffset = -128; % this value is applied also as a beam manipulation late
 % Configure beam manipulation in physical units:
 wavelength_nm = 790.0;  % wavelength of incident laser light
 
-p=0.6;
+p=0.8;
 
         steering_angle_x_deg = p;
         steering_angle_y_deg = p;
-focal_length_mm = -600.0;
+focal_length_mm = -20000.0;
 
 
 % Upload a datafield into the GPU. The datafield just consists of a single pixel with the grayValue and will
@@ -78,8 +78,8 @@ for t=0:0.1:2.1*pi
     handle.valueOffset = grayValueOffset/255;
 
     % Now, after loadData(), we apply values to the transform parameters of the handle:
-    handle.transformShiftX = -100;
-    handle.transformShiftY = -130;
+    handle.transformShiftX = 0;
+    handle.transformShiftY = 0;
     handle.transformScale = .5;
     
     % Apply the beam steering values from the handle structure to the SLM Display SDK.
