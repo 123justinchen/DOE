@@ -35,13 +35,9 @@ grayValue = 128;
 grayValueOffset = -128; % this value is applied also as a beam manipulation later.
 
 % Configure beam manipulation in physical units:
-wavelength_nm = 780.0;  % wavelength of incident laser light
-
-p=0.5;
+wavelength_nm = 790.0;  % wavelength of incident laser light
 
 
-
-focal_length_mm = -20000.0;
 
 % Upload a datafield into the GPU. The datafield just consists of a single pixel with the grayValue and will
 % automatically be extended into full SLM screen due to "PresetAutomatic" show flag.
@@ -57,17 +53,22 @@ heds_show_datahandle(handle.id);
 % Wait 2 seconds until we apply the beam manipulation to make the uploaded data visible first:
 heds_utils_wait_s(2.0);
 
-l = 0.03;%同心环的间隔
+p = 0.5;
+focal_length_mm = -20000.0;
+
+l = 0.02;%同心环的间隔
+n = 6;
+s = 0.07;
 
 for f=1:10
-    f 
+    focal_length_mm 
     
-    for u=1:5
+    for u=1:n
         u
         steering_angle_x_deg = p-l*u;
         steering_angle_y_deg = p-l*u;
 
-        for t=0:0.1:2.1*pi
+        for t=0:s:2.1*pi
             steering_angle_x_deg1 = 0 + steering_angle_x_deg*cos(t);
             steering_angle_y_deg1 = 0 + steering_angle_y_deg*sin(t);
                 
@@ -104,14 +105,14 @@ for f=1:10
 end
 
 for f=1:5
-    f 
+    focal_length_mm 
     
-    for u=1:5
+    for u=1:n
         u
         steering_angle_x_deg = p-l*u;
         steering_angle_y_deg = p-l*u;
 
-        for t=0:0.1:2.1*pi
+        for t=0:s:2.1*pi
             steering_angle_x_deg1 = 0 + steering_angle_x_deg*cos(t);
             steering_angle_y_deg1 = 0 + steering_angle_y_deg*sin(t);
                 
@@ -148,14 +149,14 @@ for f=1:5
 end
 
 for f=1:10
-    f 
+    focal_length_mm 
     
-    for u=1:5
+    for u=1:n
         u
         steering_angle_x_deg = p-l*u;
         steering_angle_y_deg = p-l*u;
 
-        for t=0:0.1:2.1*pi
+        for t=0:s:2.1*pi
             steering_angle_x_deg1 = 0 + steering_angle_x_deg*cos(t);
             steering_angle_y_deg1 = 0 + steering_angle_y_deg*sin(t);
                 
