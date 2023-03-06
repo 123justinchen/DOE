@@ -53,17 +53,18 @@ heds_show_datahandle(handle.id);
 % Wait 2 seconds until we apply the beam manipulation to make the uploaded data visible first:
 heds_utils_wait_s(2.0);
 
-p = 0.5;
+p = 0.6;
 focal_length_mm = -20000.0;
 
 l = 0.02;%同心环的间隔
 n = 6;
-s = 0.07;
+s = 0.06;
+r = 1;
 
 for f=1:10
     focal_length_mm 
     
-    for u=1:n
+    for u=r:n
         u
         steering_angle_x_deg = p-l*u;
         steering_angle_y_deg = p-l*u;
@@ -107,7 +108,7 @@ end
 for f=1:5
     focal_length_mm 
     
-    for u=1:n
+    for u=r:n
         u
         steering_angle_x_deg = p-l*u;
         steering_angle_y_deg = p-l*u;
@@ -151,7 +152,7 @@ end
 for f=1:10
     focal_length_mm 
     
-    for u=1:n
+    for u=r:n
         u
         steering_angle_x_deg = p-l*u;
         steering_angle_y_deg = p-l*u;
