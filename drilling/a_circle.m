@@ -36,7 +36,7 @@ grayValueOffset = -128; % this value is applied also as a beam manipulation late
 % Configure beam manipulation in physical units:
 wavelength_nm = 790.0;  % wavelength of incident laser light
 
-p=0.8;
+p=0.6;
 
         steering_angle_x_deg = p;
         steering_angle_y_deg = p;
@@ -57,7 +57,7 @@ heds_show_datahandle(handle.id);
 % Wait 2 seconds until we apply the beam manipulation to make the uploaded data visible first:
 heds_utils_wait_s(2.0);
 
-for t=0:0.1:2.1*pi
+for t=0:0.01:2.1*pi
 
     steering_angle_x_deg1 = 0 + steering_angle_x_deg*cos(t);
     steering_angle_y_deg1 = 0 + steering_angle_y_deg*sin(t);
