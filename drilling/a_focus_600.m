@@ -38,7 +38,7 @@ wavelength_nm = 790.0;  % wavelength of incident laser light
 
 steering_angle_x_deg = 0.0;
 steering_angle_y_deg = 0.0;
-focal_length_mm = -1500.0;
+focal_length_mm = -600.0;
 
 
 % Upload a datafield into the GPU. The datafield just consists of a single pixel with the grayValue and will

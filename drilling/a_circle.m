@@ -36,11 +36,11 @@ grayValueOffset = -128; % this value is applied also as a beam manipulation late
 % Configure beam manipulation in physical units:
 wavelength_nm = 790.0;  % wavelength of incident laser light
 
-p=0.6;
+p=0.40;
 
         steering_angle_x_deg = p;
         steering_angle_y_deg = p;
-focal_length_mm = -20000.0;
+focal_length_mm = -19600.0;
 
 
 % Upload a datafield into the GPU. The datafield just consists of a single pixel with the grayValue and will
@@ -57,7 +57,7 @@ heds_show_datahandle(handle.id);
 % Wait 2 seconds until we apply the beam manipulation to make the uploaded data visible first:
 heds_utils_wait_s(2.0);
 
-for t=0:0.01:2.1*pi
+for t=0:0.08:2.1*pi
 
     steering_angle_x_deg1 = 0 + steering_angle_x_deg*cos(t);
     steering_angle_y_deg1 = 0 + steering_angle_y_deg*sin(t);
