@@ -34,11 +34,11 @@ grayValue = 128;
 grayValueOffset = -128; % this value is applied also as a beam manipulation later.
 
 % Configure beam manipulation in physical units:
-wavelength_nm = 790.0;  % wavelength of incident laser light
+wavelength_nm  = 790.0;  % wavelength of incident laser light
 
 steering_angle_x_deg = 0.0;
 steering_angle_y_deg = 0.0;
-focal_length_mm = -600.0;
+focal_length_mm = -550.0;
 
 
 % Upload a datafield into the GPU. The datafield just consists of a single pixel with the grayValue and will
