@@ -53,18 +53,18 @@ heds_show_datahandle(handle.id);
 % Wait 2 seconds until we apply the beam manipulation to make the uploaded data visible first:
 heds_utils_wait_s(2.0);
 
-p = 0.55;
+p = 0.6;
 focal_length_mm = -20000.0;
 
-l = 0.015;%同心环的间隔
+l = 0.02;%同心环的间隔
 n = 6;
-s = 0.04;
+s = 0.02;  % density
 r = 0;
 
 x=0.0;
 
 % y = 250.88*(x.^(-0.949))
-for f=1:29
+for f=1:30   %0.4/feed
 
     for u=r:n
         u
@@ -103,10 +103,12 @@ for f=1:29
         end
           
     end
-    if f==10||f==15||f==20||f==25
-    r=r-1
-    end
-    x = f*0.015
+%     if f==10||f==15||f==20||f==25||f==28%||f==35  %f==5||
+% %     r=r-1
+% %     n=n-1
+%     end
+    x = f*0.014
+    f
     focal_length_mm = 250.88*(x.^(-0.949));
     focal_length_mm = -round(focal_length_mm)
 

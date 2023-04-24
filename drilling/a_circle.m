@@ -40,7 +40,7 @@ p=0.6;
 
         steering_angle_x_deg = p;
         steering_angle_y_deg = p;
-focal_length_mm = -550.0;
+focal_length_mm = -600.0;
 
 
 % Upload a datafield into the GPU. The datafield just consists of a single pixel with the grayValue and will
@@ -57,7 +57,7 @@ heds_show_datahandle(handle.id);
 % Wait 2 seconds until we apply the beam manipulation to make the uploaded data visible first:
 heds_utils_wait_s(2.0);
 
-for t=0:0.08:2.1*pi
+for t=0:0.01:2.1*pi
 
     steering_angle_x_deg1 = 0 + steering_angle_x_deg*cos(t);
     steering_angle_y_deg1 = 0 + steering_angle_y_deg*sin(t);
